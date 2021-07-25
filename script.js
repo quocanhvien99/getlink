@@ -2,6 +2,9 @@ function get(event) {
 	event.preventDefault();
 	const btn = document.getElementsByClassName('get')[0];
 	const loading = document.getElementsByClassName('lds-facebook')[0];
+	const result = document.getElementsByClassName('result')[0];
+	const file_info = document.getElementsByClassName('file-info')[0];
+	const download = document.getElementById('linkvip');
 
 	btn.classList.toggle('hide');
 	loading.classList.toggle('hide');
@@ -18,8 +21,12 @@ function get(event) {
 	}
 
 	axios.get(`https://api-quocanh.herokuapp.com/fshare/${id}`).then((res) => {
+		const linkvip = res.data.location;
+
 		btn.classList.toggle('hide');
 		loading.classList.toggle('hide');
-		window.location.href = res.data.location;
+		file_info.innerHTML = linkvip.split('/')[5];
+		result.classList.remove('hide');
+		download.setAttribute('href', linkvip);
 	});
 }
