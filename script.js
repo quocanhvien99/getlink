@@ -20,6 +20,6 @@ function get(event) {
 	axios.get(`https://api-quocanh.herokuapp.com/fshare/${id}`).then((res) => {
 		btn.classList.toggle('hide');
 		loading.classList.toggle('hide');
-		window.location.href = res.data.location;
+		window.open(res.data.location);
 	});
 }
