@@ -91,6 +91,7 @@ form button span {
 }
 .result .info a {
 	display: block;
+	width: fit-content;
 	padding: 10px 15px;
 	color: #fff;
 	text-decoration: none;
