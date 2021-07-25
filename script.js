@@ -21,7 +21,7 @@ function get(event) {
 	}
 
 	axios.get(`https://api-quocanh.herokuapp.com/fshare/${id}`).then((res) => {
-		const linkvip = res.data.location;
+		const linkvip = res.data.location.replace('http://', 'https://');
 
 		btn.classList.toggle('hide');
 		loading.classList.toggle('hide');
