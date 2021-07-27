@@ -25,7 +25,7 @@ function get(event) {
 
 		btn.classList.toggle('hide');
 		loading.classList.toggle('hide');
-		file_info.innerHTML = linkvip.split('/')[5];
+		file_info.innerHTML = res.data.filename;
 		result.classList.remove('hide');
 		download.setAttribute('href', linkvip);
 	});
