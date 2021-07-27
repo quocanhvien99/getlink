@@ -12,6 +12,7 @@ function get(event) {
 	const url = document.getElementById('url').value;
 	let id;
 	let index = url.indexOf('file') + 5;
+	if (index == 4) return window.alert('Đường dẫn không đúng !');
 	let index1 = url.indexOf('?', index);
 	let index2 = url.indexOf('/', index);
 	if (index1 != -1 || index2 != -1) {
